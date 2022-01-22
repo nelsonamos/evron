@@ -37,7 +37,9 @@ class _PaymentPageState extends State<Payment> {
               onPressed: () => _checkPayment(),
               child: Text('Proceed to Payment'),
               color: Colors.red,
-            )),
+
+            )
+        ),
       ),
     );
   }
@@ -45,7 +47,7 @@ class _PaymentPageState extends State<Payment> {
   void _checkPayment() {
     try {
       PaystackPayManager(context: context)
-        ..setSecretKey("YOUR-SECRET-KEY")
+        ..setSecretKey("***********")
       // ..setCompanyAssetImage(Image(image: NetworkImage("YOUR-IMAGE-URL")))
         ..setAmount(100000)
         ..setReference(DateTime.now().millisecondsSinceEpoch.toString())

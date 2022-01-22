@@ -64,7 +64,7 @@ class _DetailScreenState extends State<DetailScreen> {
             children: <Widget>[
               Text(widget.name, style: myStyle),
               Text(
-                "\$ ${widget.price.toString()}",
+                "\₦ ₦{widget.price.toString()}",
                 style: TextStyle(
                     color: Color(0xff9b96d6),
                     fontSize: 18,

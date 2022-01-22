@@ -46,46 +46,46 @@ class _CheckOutState extends State<CheckOut> {
   Widget _buildButton() {
     return Column(
         children: productProvider.userModelList.map((e) {
-      return Container(
-        height: 50,
-        child: MyButton(
-          name: "Buy",
-          onPressed: () {
-            if (productProvider.getCheckOutModelList.isNotEmpty) {
-              FirebaseFirestore.instance.collection("Order").add({
-                "Product": productProvider.getCheckOutModelList
-                    .map((c) => {
-                          "ProductName": c.name,
-                          "ProductPrice": c.price,
-                          "ProductQuetity": c.quentity,
-                          "ProductImage": c.image,
-                          "Product Color": c.color,
-                          "Product Size": c.size,
-                        })
-                    .toList(),
-                "TotalPrice": total.toStringAsFixed(2),
-                "UserName": e.userName,
-                "UserEmail": e.userEmail,
-                "UserNumber": e.userPhoneNumber,
-                "UserAddress": e.userAddress,
-                "UserId": user.uid,
-              });
-              setState(() {
-                myList.clear();
-              });
+          return Container(
+            height: 50,
+            child: MyButton(
+              name: "Buy",
+              onPressed: () {
+                if (productProvider.getCheckOutModelList.isNotEmpty) {
+                  FirebaseFirestore.instance.collection("Order").add({
+                    "Product": productProvider.getCheckOutModelList
+                        .map((c) => {
+                      "ProductName": c.name,
+                      "ProductPrice": c.price,
+                      "ProductQuetity": c.quentity,
+                      "ProductImage": c.image,
+                      "Product Color": c.color,
+                      "Product Size": c.size,
+                    })
+                        .toList(),
+                    "TotalPrice": total.toStringAsFixed(2),
+                    "UserName": e.userName,
+                    "UserEmail": e.userEmail,
+                    "UserNumber": e.userPhoneNumber,
+                    "UserAddress": e.userAddress,
+                    "UserId": user.uid,
+                  });
+                  setState(() {
+                    myList.clear();
+                  });
 
-              productProvider.addNotification("Notification");
-            } else {
-              _scaffoldKey.currentState.showSnackBar(
-                SnackBar(
-                  content: Text("No Item Yet"),
-                ),
-              );
-            }
-          },
-        ),
-      );
-    }).toList());
+                  productProvider.addNotification("Notification");
+                } else {
+                  _scaffoldKey.currentState.showSnackBar(
+                    SnackBar(
+                      content: Text("No Item Yet"),
+                    ),
+                  );
+                }
+              },
+            ),
+          );
+        }).toList());
   }
 
   @override
@@ -186,19 +186,19 @@ class _CheckOutState extends State<CheckOut> {
                     children: <Widget>[
                       _buildBottomSingleDetail(
                         startName: "Subtotal",
-                        endName: "\$ ${subTotal.toStringAsFixed(2)}",
+                        endName: "\₦ ${subTotal.toStringAsFixed(1)}",
                       ),
-                      _buildBottomSingleDetail(
+                     /* _buildBottomSingleDetail(
                         startName: "Discount",
                         endName: "${discount.toStringAsFixed(2)}%",
-                      ),
-                      _buildBottomSingleDetail(
+                      ),*/
+                     /* _buildBottomSingleDetail(
                         startName: "Shipping",
-                        endName: "\$ ${shipping.toStringAsFixed(2)}",
-                      ),
+                        endName: "\₦ ${shipping.toStringAsFixed(2)}",
+                      ),*/
                       _buildBottomSingleDetail(
                         startName: "Total",
-                        endName: "\$ ${total.toStringAsFixed(2)}",
+                        endName: "\₦ ${total.toStringAsFixed(1)}",
                       ),
                     ],
                   ),

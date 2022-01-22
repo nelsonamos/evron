@@ -52,7 +52,10 @@ class About extends StatelessWidget {
                 child: Wrap(
                   children: [
                     Text(
-                      "Neru My Black Directionary,This App You Can Buy Dress Shirt Shoes Pant And Tie And Many Other Product In Cheap Price, Now Its Time Buy SomeThing",
+                      "Evron is the online donations platform serving the forgotten 95% of small charities,"
+                          " levelling the playing field and using the opportunity of mobile / social to reach new audiences."
+                          " We highlight good news stories of people doing great work on the ground which "
+                          "is often one thousand for one thousand more effective and productive than large charities with huge overheads.",
                       style: TextStyle(fontSize: 22, color: Colors.grey),
                     ),
                   ],
@@ -65,3 +68,4 @@ class About extends StatelessWidget {
     );
   }
 }
+///₦

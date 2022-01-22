@@ -35,7 +35,7 @@ class SingleProduct extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    "\$ ${price.toString()}",
+                    "\₦ ${price.toString()}",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 17,

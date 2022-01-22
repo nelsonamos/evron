@@ -747,7 +747,7 @@ class _HomePageState extends State<HomePage> {
       drawer: _buildMyDrawer(),
       appBar: AppBar(
         title: Text(
-          "HomePage",
+          "Evron",
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
